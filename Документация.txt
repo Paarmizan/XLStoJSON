@@ -1,0 +1,18 @@
+Библиотеки:
+	apache.poi (org.apache.poi:poi:5.2.3)
+	apache.poi.ooxml (org.apache.poi:poi-ooxml:5.2.3)
+	jackson (com.fasterxml.jackson.core:jackson-databind:2.14.1)
+	json (org.json:json:20230227)
+
+Класс XlsToJsonConverter содежит метод excelToJson(File inputFile, File readingParameters),
+принимающий в качестве inputFile файл типа .xls или .xlsx и в качестве readingParameters
+.json файл с параметрами чтения. Метод excelToJson возвращает объект типа JSONArray,
+в котором хранится считанная таблица.
+
+readingParameters имеет следующую структуру:
+{
+  "startRow" - Номер начальной строки
+  "processedColumns" - Массив с номерами обрабатываемых стобцов
+  "amountRecords" - Количество обрабатываемых строк
+  "processedSheet" - Номер обрабатываемого листа
+}
